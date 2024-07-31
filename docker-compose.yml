@@ -1,0 +1,16 @@
+version: '3'
+services:
+  express_server:
+    build: .
+    ports:
+      - "8080:5000"
+    networks:
+      - my_bridge_network
+    volumes:
+      - my_volume_data:/data
+
+networks:
+  my_bridge_network:
+    driver: bridge      
+volumes:
+  my_volume_data:
